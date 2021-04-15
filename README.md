@@ -1,7 +1,42 @@
-# BIGTREETECH-SKR-V1.3
-32bit board with LPC1768, support marlin2.0 and smoothieware, support lcd2004/12864, On-board TMC2130 SPI interface and TMC2208 UART interface no additional wiring is 
+# If you find this repo and can read this, I haven't finished this yet
+# CR10S5 Dual Extrusion Update With BTT SKR1.4 TURBO 32bit TMC 2208
 
-BIGTREETECH SKR V1.3 YouTube Video：[here](https://www.youtube.com/watch?v=oaXfXkPYHpw&t=8s)
- 
-# BIGTREETECH-SKR-V1.4
-This [article](https://3dwork.io/en/complete-guide-skr-v1-4-and-tmc2209) explains how to configure all different TMC2209 dirvers from different procuders in SKR V1.4 & V1.4 Turbo
+**This repository is for a very specific setup. Modify it for similar platforms and boards (S4, S3, CR10S, SKR1.3, etc**
+
+## Specific modifications covered in this repo:
+* BigTreeTech SKR 1.4 Turbo 32bit board (LPC1769)
+ * TMC2208 in UART mode
+* Creality CR10S5
+* Dual Extrusion
+ * [Thingiverse: CR-10 Dual v6 Extruder Update 1.3](https://www.thingiverse.com/thing:2777673)
+* PT100 thermocouple with 5V amplifier board
+* Marlin 2.0.6.1
+ * This is the release this repo supports, it will not work with older/newer versions without significant changes.
+
+## Hardware
+### Things you must buy or have:
+* PT100 with 5V amplifier board (I am using the 5V board because that is what I have setup this firmware to manage, I'm sure people smarter than I am will do something else)
+* BTT SKR1.4 Turbo (as far as I can tell, the 1.4 turbo/normie is interchangeable, just change the board callouts in the header files)
+* extra Nema 17 for extruder 1
+* M3/M4 hardware (40mm length bolts is the max size I used)
+* Wire for soldering because I chose sensors that don't have JST connectors, do better than I did please
+* Soldering iron/solder/flux
+* JST connectors and crimpers if you want, I didn't use them and I'm still here
+* etc
+
+### Things you must print (or buy):
+* Dual extrusion printer head, I used this radical one: [LINKname](link)
+* Enclosure for your mainboard, I printed this lovely one: [LINKname](link)
+* Nema 17 bracket
+* GLCD (graphical lcd) mounting case, I printed this amazing one: [LINKname](link)
+* Some filament mounting mechanism, for the other spool
+* anything else?
+
+## Software
+### If you have my exact same setup, you can find the firmware.bin file in the releases page and be on your merry way
+
+### For everyone else, the "SKR1.4 Turbo TMC 2208" is your folder.
+Here you can modify the configuration.h, configuration_adv.h, thermistor_42.h, and anything else you need to edit to your printer running. 
+
+## Hardware Setup Instructions
+### Part 1 - Assembling your 
