@@ -1,7 +1,8 @@
-# If you find this repo and can read this, I haven't finished this yet
+# If you find this repo and can read this, I haven't finished this yet 
 # CR10S5 Dual Extrusion Update With BTT SKR1.4 TURBO 32bit TMC 2208
 
 **This repository is for a very specific setup. Modify it for similar platforms and boards (S4, S3, CR10S, SKR1.3, etc**
+The software was compiled with VS Code and the PlatformIO/Auto Build Marlin plugins.
 
 ## Specific modifications covered in this repo:
 * BigTreeTech SKR 1.4 Turbo 32bit board (LPC1769)
@@ -29,8 +30,6 @@
 * Enclosure for your mainboard, I printed this lovely one: [LINKname](link)
 * Nema 17 bracket
 * GLCD (graphical lcd) mounting case, I printed this amazing one: [LINKname](link)
-* Some filament mounting mechanism, for the other spool
-* anything else?
 
 ## Software
 ### If you have my exact same setup, you can find the firmware.bin file in the releases page and be on your merry way
@@ -38,5 +37,11 @@
 ### For everyone else, the "SKR1.4 Turbo TMC 2208" is your folder.
 Here you can modify the configuration.h, configuration_adv.h, thermistor_42.h, and anything else you need to edit to your printer running. 
 
-## Hardware Setup Instructions
-### Part 1 - Assembling your 
+## Software Setup Instructions
+
+1. Clone the repo or download the SKR1.4 Turbo TMC 2208 folder
+2. Load the folder into VS Code with PlatformIO
+3. Open configuration, configuration_adv, thermistor_42, pins_BTT_SKR_V1_4 (lpc1768>pins_BTT_SKR_V1_4) header files
+
+### Changes in configuration.h
+`sdfsdfsdf`
