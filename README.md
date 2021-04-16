@@ -6,13 +6,14 @@ The software was compiled with VS Code and the PlatformIO/Auto Build Marlin plug
 
 ## Specific modifications covered in this repo:
 * BigTreeTech SKR 1.4 Turbo 32bit board (LPC1769)
- * TMC2208 in UART mode
+  * TMC2208 in UART mode
 * Creality CR10S5
 * Dual Extrusion
- * [Thingiverse: CR-10 Dual v6 Extruder Update 1.3](https://www.thingiverse.com/thing:2777673)
-* PT100 thermocouple with 5V amplifier board
+  * [Thingiverse: CR-10 Dual v6 Extruder Update 1.3](https://www.thingiverse.com/thing:2777673)
+* PT100 thermocouple with 5V amplifier board on E0
+* "Standard" extruder and hotend setup on E1
 * Marlin 2.0.6.1
- * This is the release this repo supports, it will not work with older/newer versions without significant changes.
+  * This is the release this repo supports, it will not work with older/newer versions without significant changes.
 
 ## Hardware
 ### Things you must buy or have:
@@ -44,4 +45,57 @@ Here you can modify the configuration.h, configuration_adv.h, thermistor_42.h, a
 3. Open configuration, configuration_adv, thermistor_42, pins_BTT_SKR_V1_4 (lpc1768>pins_BTT_SKR_V1_4) header files
 
 ### Changes in configuration.h
-`sdfsdfsdf`
+````#define SERIAL_PORT -1
+
+//#define SERIAL_PORT_2 0
+
+#define BAUDRATE 250000
+
+#ifndef MOTHERBOARD
+    #define MOTHERBOARD BOARD_BTT_SKR_V1_4_TURBO
+#endif
+
+#define CUSTOM_MACHINE_NAME "CR10S5"
+
+#define EXTRUDERS 2
+
+#define HOTEND_OFFSET_X { 0.0, 22.79 }
+
+#define TEMP_SENSOR_0 42 // custom thermistor_42.h entry
+#define TEMP_SENSOR_1 1 // if you have a different thermistor for extruder 2, change it here
+
+#define HEATER_0_MAXTEMP 350
+
+// PID AUTOTUNE VALUES FOR PT100 THERMOCOUPLE, you may want to perform an autotune
+#define DEFAULT_Kp 14.24
+#define DEFAULT_Ki 1.07
+#define DEFAULT_Kd 47.56
+
+#define USE_XMIN_PLUG
+#define USE_YMIN_PLUG
+#define USE_ZMIN_PLUG
+
+#define X_DRIVER_TYPE TMC2208
+#define Y_DRIVER_TYPE TMC2208
+#define Z_DRIVER_TYPE TMC2208
+
+#define E0_DRIVER_TYPE TMC2208
+#define E1_DRIVER_TYPE TMC2208
+
+#define S_CURVE_ACCELERATION //you don't have to do this
+
+#define INVERT_X_DIR true
+#define INVERT_Y_DIR true
+#define INVERT_Z_DIR false
+
+#define INVERT_E0_DIR true
+#define INVERT_E1_DIR true
+
+#define X_BED_SIZE 500 //change these to your bed size if you don't have CR10S5
+#define Y_BED_SIZE 500
+
+#define Z_MAX_POS 500
+
+// Preheat Constants
+#define PREHEAT_1_LABEL 
+````
