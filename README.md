@@ -47,7 +47,8 @@ Here you can modify the configuration.h, configuration_adv.h, thermistor_42.h, a
 3. Open configuration, configuration_adv, thermistor_42, pins_BTT_SKR_V1_4 (lpc1768>pins_BTT_SKR_V1_4) header files
 
 ### Changes in configuration.h
-````#define SERIAL_PORT -1
+````
+#define SERIAL_PORT -1
 
 //#define SERIAL_PORT_2 0
 
@@ -101,3 +102,17 @@ Here you can modify the configuration.h, configuration_adv.h, thermistor_42.h, a
 // Preheat Constants
 #define PREHEAT_1_LABEL 
 ````
+
+### Changes in configuration_adv.h
+````
+
+````
+
+### Changes in thermistor_42.h
+Thermistor 42 technically doesn't exist as of the most recent Marlin, so you need to either create the header file or use the one in th repo. This thermistor is defined as a new resistance table created by {} specifically for the 5V E3D board used on a 3.3V pin. This limits the max temperature reading to about 350C, but I'm not complaining. 
+````
+
+````
+
+### Changes in pins_BTT_SKR_V1_4.h
+You'll have to redefine the pins used in 
